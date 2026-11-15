@@ -1,0 +1,137 @@
+SAMPLE RUN 1 (input typed by the user is shown after each prompt)
+
+(menu)
+Enter choice: 1
+Account number: 1001
+Customer name: Nishindra Reddy
+Opening balance: 5000
+Account created
+
+(menu)
+Enter choice: 1
+Account number: 1002
+Customer name: Ravi Charan Sagar
+Opening balance: 10000
+Account created
+
+(menu)
+Enter choice: 1
+Account number: 1001
+Account number already exists!
+
+(menu)
+Enter choice: 2
+Account number: 1001
+Deposit amount: 2500.50
+Deposit successful. Balance: Rs. 7500.50
+
+(menu)
+Enter choice: 2
+Account number: 1001
+Deposit amount: -100
+Amount must be at least 0.01
+
+(menu)
+Enter choice: 3
+Account number: 1001
+Withdrawal amount: 1000
+Withdrawal successful. Balance: Rs. 6500.50
+
+(menu)
+Enter choice: 3
+Account number: 1001
+Withdrawal amount: 50000
+Insufficient balance. Available balance: Rs. 6500.50
+
+(menu)
+Enter choice: 3
+Account number: 1001
+Withdrawal amount: 300.25
+Withdrawal successful. Balance: Rs. 6200.25
+
+(menu)
+Enter choice: 6
+Account number: 1001
+Account 1001 (Nishindra Reddy)
+Id     Type              Amount Date & Time              Balance After
+1001   Deposit      Rs. 2500.50 15-11-2026 22:18:27.087    Rs. 7500.50
+1002   Withdrawal   Rs. 1000.00 15-11-2026 22:18:27.093    Rs. 6500.50
+1003   Withdrawal    Rs. 300.25 15-11-2026 22:18:27.095    Rs. 6200.25
+
+(menu)
+Enter choice: 7
+Account number: 1001
+1. Ascending
+2. Descending
+Enter choice: 2
+Account 1001 (Nishindra Reddy)
+Id     Type              Amount Date & Time              Balance After
+1003   Withdrawal    Rs. 300.25 15-11-2026 22:18:27.095    Rs. 6200.25
+1002   Withdrawal   Rs. 1000.00 15-11-2026 22:18:27.093    Rs. 6500.50
+1001   Deposit      Rs. 2500.50 15-11-2026 22:18:27.087    Rs. 7500.50
+
+(menu)
+Enter choice: 8
+Account number: 1001
+1. Ascending
+2. Descending
+Enter choice: 1
+Account 1001 (Nishindra Reddy)
+Id     Type              Amount Date & Time              Balance After
+1003   Withdrawal    Rs. 300.25 15-11-2026 22:18:27.095    Rs. 6200.25
+1002   Withdrawal   Rs. 1000.00 15-11-2026 22:18:27.093    Rs. 6500.50
+1001   Deposit      Rs. 2500.50 15-11-2026 22:18:27.087    Rs. 7500.50
+
+(menu)
+Enter choice: 5
+Account    Name                        Balance  Transactions
+1001       Nishindra Reddy         Rs. 6200.25             3
+1002       Ravi Charan Sagar      Rs. 10000.00             0
+
+(menu)
+Enter choice: 9
+
+Storage          File         Size (bytes)   Accounts   Transactions
+Serialization    bank.dat              683          2              3
+Text file        bank.txt              215          2              3
+
+Advantages of serialization over text file storage:
+1. One call (writeObject / readObject) saves and restores the whole HashMap,
+   every Account and the ArrayList of Transactions inside it.
+   The text file needs our own format, writing code and parsing code.
+2. Data types are kept (int, double, Date). In a text file everything is text
+   and must be converted back, and bad text can cause errors.
+3. The link between an account and its transactions is restored automatically.
+4. Less code, so fewer mistakes (a name with the separator | would break the text file).
+Limits of serialization:
+1. The file is not readable by humans and only Java programs can read it.
+2. If the classes are changed, old files may not load.
+3. Here the serialized file is 468 bytes bigger, because it also stores class information.
+
+(menu)
+Enter choice: 0
+Saved 2 accounts in bank.dat
+Bye!
+
+SAMPLE RUN 2 (program started again - data loaded from bank.dat)
+Loaded 2 accounts from file
+
+(menu)
+Enter choice: 5
+Account    Name                        Balance  Transactions
+1001       Nishindra Reddy         Rs. 6200.25             3
+1002       Ravi Charan Sagar      Rs. 10000.00             0
+
+(menu)
+Enter choice: 6
+Account number: 1001
+Account 1001 (Nishindra Reddy)
+Id     Type              Amount Date & Time              Balance After
+1001   Deposit      Rs. 2500.50 15-11-2026 22:18:27.087    Rs. 7500.50
+1002   Withdrawal   Rs. 1000.00 15-11-2026 22:18:27.093    Rs. 6500.50
+1003   Withdrawal    Rs. 300.25 15-11-2026 22:18:27.095    Rs. 6200.25
+
+(menu)
+Enter choice: 0
+Saved 2 accounts in bank.dat
+Bye!
